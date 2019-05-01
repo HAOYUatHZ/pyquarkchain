@@ -94,6 +94,7 @@ def mine(
 ) -> Tuple[Optional[bytes], Optional[bytes]]:
     start_nonce = random.randint(0, 999999999)
     nonce = start_nonce
+    print("mining with start_nonce: %d"% nonce)
     target = 2 ** 256 // (difficulty or 1)
     for i in range(1, rounds + 1):
         # hashimoto expected big-indian byte representation
