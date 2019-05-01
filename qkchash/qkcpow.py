@@ -1,4 +1,5 @@
 import os
+import random
 from functools import lru_cache
 from typing import Optional, Tuple, Dict
 
@@ -91,6 +92,7 @@ def mine(
     start_nonce: int = 0,
     rounds: int = 1000,
 ) -> Tuple[Optional[bytes], Optional[bytes]]:
+    start_nonce = random.randint(0, 999999999)
     nonce = start_nonce
     target = 2 ** 256 // (difficulty or 1)
     for i in range(1, rounds + 1):
